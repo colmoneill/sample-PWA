@@ -30,5 +30,7 @@
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "white",
-  "theme_color": "white"
+  "theme_color": "white",
+  "scope": "/sample-pwa",
+  "start_url": "/index.html"
 }
