@@ -14,7 +14,7 @@
       "sizes": "384x384",
       "type": "image/png"
     }, {
-      "src": "/imgs/icon-512-512.png",
+      "src": "https://gitlab.com/ui-programming-21-22/sample-pwa/-/raw/main/public/imgs/icon-512-512.png?inline=false",
       "sizes": "512x512",
       "type": "image/png"
     }],
