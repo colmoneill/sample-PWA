@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <title>Sample PWA UI Prog 21/22</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/screen.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="assets/images/icon-152.png">
+  <link rel="apple-touch-icon" href="imgs/icon-192-192.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="white"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,6 +19,24 @@
   <div class="container">
     <h1 class="title">Sample PWA</h1>
   </div>
+  <form name="helloForm" method="get" action="gameplay.html" onsubmit="validateForm()">
+    My Name: <input type="text" name="name">
+    <input type="submit" value="Submit">
+</form>
+
+
+<div id="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>You seem to have played a session on this device before. <br>Existing local data:</p>
+    <code class="present-saved-data"></code>
+    <p>Would you like to retrieve your previous score and settings?</p>
+    <button class="saved-data-accept">Yes, restore the saved game</button><button class="saved-data-refusal">No, start fresh</button>
+  </div>
+
+</div> 
   <script src="main.js"></script>
+  <script type="text/javascript" src="assets/js/initial.js"></script>
 </body>
 </html>
