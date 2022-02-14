@@ -1,6 +1,12 @@
 {
   "name": "Sample PWA UI Prog",
   "short_name": "UI-Prog_PWA",
+  "lang": "en-GB",
+  "display": "standalone",
+  "orientation": "landscape-primary",
+  "background_color": "white",
+  "theme_color": "white",
+  "start_url": ".",
   "icons": [{
       "src": "https://gitlab.com/ui-programming-21-22/sample-pwa/-/raw/main/public/imgs/icon-192-192.png?inline=false",
       "sizes": "192x192",
@@ -21,12 +27,5 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }],
-  "lang": "en-GB",
-  "display": "standalone",
-  "orientation": "landscape-primary",
-  "background_color": "white",
-  "theme_color": "white",
-  "scope": "/",
-  "start_url": "/"
+    }]
 }
