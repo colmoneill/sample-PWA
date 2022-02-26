@@ -4,6 +4,11 @@ const filesToCache = [
   'main.js',
   'index.html',
   'assets/css/style.css',
+  './sample-pwa/.',
+  './sample-pwa/main.js',
+  './sample-pwa/index.html',
+  './sample-pwa/assets/css/style.css',
+
 ];
 
 self.addEventListener('install', async e => {
