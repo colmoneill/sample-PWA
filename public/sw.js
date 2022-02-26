@@ -1,13 +1,13 @@
 const cacheName = 'sample-pwa';
 const filesToCache = [
-  '.',
-  'main.js',
-  'index.html',
-  'assets/css/style.css',
-  '/sample-pwa/',
-  '/sample-pwa/main.js',
-  '/sample-pwa/index.html',
-  '/sample-pwa/assets/css/style.css',
+  '/.',
+  '/main.js',
+  '/index.html',
+  '/assets/css/style.css',
+  './sample-pwa/',
+  './sample-pwa/main.js',
+  './sample-pwa/index.html',
+  './sample-pwa/assets/css/style.css',
 
 ];
 
