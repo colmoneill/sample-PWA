@@ -6,7 +6,7 @@
   "orientation": "landscape-primary",
   "background_color": "white",
   "theme_color": "white",
-  "start_url": "sample-pwa/index.html",
+  "start_url": "/sample-pwa/index.html",
   "icons": [{
       "src": "https://gitlab.com/ui-programming-21-22/sample-pwa/-/raw/main/public/imgs/icon-192-192.png?inline=false",
       "sizes": "192x192",
