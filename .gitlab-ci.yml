@@ -6,7 +6,7 @@ pages:
   - echo 'Nothing to do...'
   artifacts:
     paths:
-    - public
+    - .
     expire_in: 365 day
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
