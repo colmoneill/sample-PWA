@@ -1,26 +1,46 @@
-var cacheName = 'sample-pwa';
-var filesToCache = [
-  '/',
+const cacheName = 'sample-pwa';
+const filesToCache = [
+  '.',
+  'main.js',
   'index.html',
   'assets/css/style.css',
-  'assets/js/main.js'
 ];
 
-/* Start the service worker and cache all of the app's content */
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
-  self.skipWaiting();
+self.addEventListener('install', async e => {
+  const cache = await caches.open(cacheName);
+  await cache.addAll(filesToCache);
+  return self.skipWaiting();
 });
 
-/* Serve cached content when offline */
-self.addEventListener('fetch', function(e) {
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
+self.addEventListener('activate', e => {
+  self.clients.claim();
 });
+
+self.addEventListener('fetch', async e => {
+  const req = e.request;
+  const url = new URL(req.url);
+
+  if (url.origin === location.origin) {
+    e.respondWith(cacheFirst(req));
+  } else {
+    e.respondWith(networkAndCache(req));
+  }
+});
+
+async function cacheFirst(req) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(req);
+  return cached || fetch(req);
+}
+
+async function networkAndCache(req) {
+  const cache = await caches.open(cacheName);
+  try {
+    const fresh = await fetch(req);
+    await cache.put(req, fresh.clone());
+    return fresh;
+  } catch (e) {
+    const cached = await cache.match(req);
+    return cached;
+  }
+}
