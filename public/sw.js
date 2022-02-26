@@ -34,7 +34,7 @@ self.addEventListener('fetch', async e => {
 
 async function cacheFirst(req) {
   const cache = await caches.open(cacheName);
-  const cached = await cache.match(req);
+  const cached = await cache.match(req.url);
   return cached || fetch(req);
 }
 
